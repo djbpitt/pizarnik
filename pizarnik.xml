@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample>
+    <author>Pizarnik</author>
+    <title>Cuarto solo</title>
+    <version wit="draft">
+        <l>
+            <del rend="overstrike">Si alguna vez</del>
+        </l>
+        <l><add place="margin">Si</add> te atreves a <del rend="multiple-overstrike" unit="7"><gap
+                    reason="illegible"/>der</del> sorprender</l>
+        <l>el sentido de esta vieja pared;</l>
+        <l>y sus fisura<subst><add place="inline">s,</add><del rend="over-written"
+                >;</del></subst><del rend="overstrike"><gap length="1" reason="illegible"/></del>
+                desgarraduras<del rend="overstrike"><gap reason="illegible" length="1"/></del>,</l>
+        <l>formando rostros, esfinges,</l>
+        <l>manos, clepsidras, <del rend="overstrike"><gap reason="illegible" length="3"/></del></l>
+        <l>seguramente vendrá</l>
+        <l>una presencia para tu sed,</l>
+        <l>probablemente partirá</l>
+        <l>esta ausencia que te bebe.</l>
+    </version>
+    <version wit="published">
+        <l>Si te atreves a sorprender</l>
+        <l>la verdad de esta vieja pared;</l>
+        <l>y sus fisuras, desgarraduras,</l>
+        <l>formando rostros, esfinges,</l>
+        <l>manos, clepsidras,</l>
+        <l>seguramente vendrá</l>
+        <l>una presencia para tu sed,</l>
+        <l>probablemente partirá</l>
+        <l>esta ausencia que te bebe.</l>
+    </version>
+</sample>
