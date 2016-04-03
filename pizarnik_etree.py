@@ -129,7 +129,6 @@ root = tree.getroot()
 versions = root.findall('.//version')
 versionSet = [Witness(etree.tostring(version)) for version in versions]
 lineCount = len(versionSet[0]) # 9 lines
-# print(versionSet[0].lines) # returns Line object
 for lineNo in range(lineCount):
     json_input = {}
     witnesses = []
@@ -139,17 +138,6 @@ for lineNo in range(lineCount):
         witnessData["id"] = versionSet[versionNo].siglum
         witnessData["tokens"] = Line(versionSet[versionNo].lines[lineNo]).line.tokens()
         witnesses.append(witnessData)
-    print(json.dumps(json_input))
-
-#  = [{versionSet[i].siglum: versionSet[i].lines} for i in range(len(versionSet))]
-# print(type(versionDicts[0].keys()[0]))
-# print(len(versionSet)) # 2
-# lineSets = [[versionSet[j][i] for i in range(lineCount)] for j in [0,1]]
-# for version in versions:
-#     stuff = Witness(etree.tostring(version))
-#     print(len(stuff))
-# siglum = version.attrib['wit']
-# lines = version.findall('.//l')
-# print(siglum)
-# for line in lines:
-#     print(Line(line).tokens())
+    # print(json.dumps(json_input))
+    collation = collate(json_input, output='json')
+    print(collation)

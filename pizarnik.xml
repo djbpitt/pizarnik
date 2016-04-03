@@ -4,8 +4,8 @@
     <title>Cuarto solo</title>
     <version wit="draft">
         <del rend="overstrike">Si alguna vez</del>
-        <l><add place="margin">Si</add> te atreves a <del rend="multiple-overstrike" unit="7"><gap
-                    reason="illegible"/>der</del> sorprender</l>
+        <l><add place="margin">Si</add> te atreves a <del rend="multiple-overstrike"><gap
+                    reason="illegible" length="7"/>der</del> sorprender</l>
         <l>el sentido de esta vieja pared;</l>
         <l>y sus fisura<subst><add place="inline">s,</add><del rend="over-written"
                 >;</del></subst><del rend="overstrike"><gap length="1" reason="illegible"/></del>
