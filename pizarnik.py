@@ -29,6 +29,7 @@ witnesses = {}
 
 # Only process content inside witnesses
 inWitness = False
+inLine = False
 
 # Tokenize, keeping leading whitespace (whitespace after last token is processed separately)
 def tokenize(contents):
@@ -54,37 +55,45 @@ for event, node in doc:
     elif event == START_ELEMENT:
         # <l> elements are not flattened; all others are
         if node.tagName == 'l':
+            inLine = True
             t = Text()
             t.data = '\n'
             currentWitness.peek().appendChild(t)
             currentWitness.peek().appendChild(node)
             currentWitness.push(node)
+        elif not inLine:
+            continue
         else:
             node.setAttribute('type', 'start')
             currentWitness.peek().appendChild(node)
     elif event == END_ELEMENT:
         # Create matching empty "end" element for any element except <l>
-        if node.tagName != 'l':
+        if node.tagName == 'l':
+            inLine = False
+            currentWitness.pop()
+        elif not inLine:
+            continue
+        else:
             clone = node.cloneNode(False)
             clone.setAttribute('type', 'end')
             currentWitness.peek().appendChild(clone)
-        else:
-            currentWitness.pop()
     elif event == CHARACTERS:
-        # tokens have optional leading whitespace
-        tokens = tokenize(node.data)
-        textdata = ''
-        for token in tokens:
-            if startWhite.match(token):
-                # if there's leading whitespace replace it with a new line
+        if not inLine:
+            continue
+        else:
+            # tokens have optional leading whitespace
+            tokens = tokenize(node.data)
+            textdata = ''
+            for token in tokens:
+                if startWhite.match(token):
+                    # if there's leading whitespace replace it with a new line
+                    textdata += '\n'
+                textdata += startWhite.sub('',token)
+            if endWhite.search(node.data):
+                # if there was whitespace at the end of character data, output a new line
                 textdata += '\n'
-            textdata += startWhite.sub('',token)
-        if endWhite.search(node.data):
-            # if there was whitespace at the end of character data, output a new line
-            textdata += '\n'
-        t = Text()
-        t.data = textdata
-        currentWitness.peek().appendChild(t)
+            t = Text()
+            t.data = textdata
+            currentWitness.peek().appendChild(t)
 for key, value in witnesses.items():
-    if key == 'draft':
-        print(value.pop().toxml())
+    print(value.pop().toxml())

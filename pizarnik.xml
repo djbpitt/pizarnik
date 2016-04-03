@@ -3,9 +3,7 @@
     <author>Pizarnik</author>
     <title>Cuarto solo</title>
     <version wit="draft">
-        <l>
-            <del rend="overstrike">Si alguna vez</del>
-        </l>
+        <del rend="overstrike">Si alguna vez</del>
         <l><add place="margin">Si</add> te atreves a <del rend="multiple-overstrike" unit="7"><gap
                     reason="illegible"/>der</del> sorprender</l>
         <l>el sentido de esta vieja pared;</l>
