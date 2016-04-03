@@ -3,9 +3,10 @@ Collate pyzarnik_etree.xml
 David J. Birnbaum (djbpitt@gmail.com)
 First version: 2016-04-02
 """
-import sys
 import re
+import sys
 import json
+from dicttoxml import dicttoxml
 from lxml import etree
 
 # Use djb development version of collatex (https://github.com/djbpitt/collatex, "experimental" branch)
@@ -130,6 +131,8 @@ root = tree.getroot()
 versions = root.findall('.//version')
 versionSet = [Witness(etree.tostring(version)) for version in versions]
 lineCount = len(versionSet[0]) # 9 lines
+output = open('collation.xml','w')
+output.write('<root>')
 for lineNo in range(lineCount):
     json_input = {}
     witnesses = []
@@ -141,4 +144,10 @@ for lineNo in range(lineCount):
         witnesses.append(witnessData)
     # print(json.dumps(json_input))
     collation = collate(json_input, output='json')
-    print(collation)
+    xmlOutput = dicttoxml(json.loads(collation), root=False)
+    xmlified = re.sub('&gt;','>',re.sub('&lt;','<',re.sub('&quot;','"',str(xmlOutput.decode()))))
+    # print(collation) # prints JSON output
+    # print(dicttoxml(json.loads(collation))) # prints XML output
+    output.write(xmlified)
+output.write('</root>')
+output.close()
