@@ -131,7 +131,16 @@ versionSet = [Witness(etree.tostring(version)) for version in versions]
 lineCount = len(versionSet[0]) # 9 lines
 # print(versionSet[0].lines) # returns Line object
 for lineNo in range(lineCount):
-    print(versionSet[0].lines[lineNo].tokens())
+    json_input = {}
+    witnesses = []
+    json_input["witnesses"] = witnesses
+    for versionNo in range(len(versionSet)):
+        witnessData = {}
+        witnessData["id"] = versionSet[versionNo].siglum
+        witnessData["tokens"] = Line(versionSet[versionNo].lines[lineNo]).line.tokens()
+        witnesses.append(witnessData)
+    print(json.dumps(json_input))
+
 #  = [{versionSet[i].siglum: versionSet[i].lines} for i in range(len(versionSet))]
 # print(type(versionDicts[0].keys()[0]))
 # print(len(versionSet)) # 2
