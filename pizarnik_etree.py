@@ -47,6 +47,7 @@ class Line:
         <xsl:template match="add | del | gap ">
             <xsl:element name="{name()}">
                 <xsl:attribute name="n">start</xsl:attribute>
+                <xsl:copy-of select="@*"/>
             </xsl:element>
             <xsl:apply-templates/>
             <xsl:element name="{name()}">
