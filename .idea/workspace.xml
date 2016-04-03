@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="692e6bac-c6f1-4c1a-adee-cd87c98b383b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pizarnik_etree.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pizarnik.py" afterPath="$PROJECT_DIR$/pizarnik.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pizarnik.xml" afterPath="$PROJECT_DIR$/pizarnik.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pizarnik_etree.py" afterPath="$PROJECT_DIR$/pizarnik_etree.py" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -20,7 +16,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/untitled$pizarnik_etree.coverage" NAME="pizarnik_etree Coverage Results" MODIFIED="1459634297311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/untitled$pizarnik_etree.coverage" NAME="pizarnik_etree Coverage Results" MODIFIED="1459695010623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/untitled$sample.coverage" NAME="sample Coverage Results" MODIFIED="1459113891823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/untitled$pizarnik.coverage" NAME="pizarnik Coverage Results" MODIFIED="1459627811701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -50,8 +46,8 @@
           <file leaf-file-name="pizarnik_etree.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pizarnik_etree.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="584">
-                  <caret line="139" column="20" selection-start-line="139" selection-start-column="20" selection-end-line="139" selection-end-column="20" />
+                <state relative-caret-position="269">
+                  <caret line="123" column="37" selection-start-line="123" selection-start-column="37" selection-end-line="123" selection-end-column="37" />
                   <folding>
                     <element signature="e#99#109#0" expanded="true" />
                   </folding>
@@ -576,8 +572,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pizarnik_etree.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="139" column="20" selection-start-line="139" selection-start-column="20" selection-end-line="139" selection-end-column="20" />
+        <state relative-caret-position="269">
+          <caret line="123" column="37" selection-start-line="123" selection-start-column="37" selection-end-line="123" selection-end-column="37" />
           <folding>
             <element signature="e#99#109#0" expanded="true" />
           </folding>

@@ -17,7 +17,7 @@ class Witness:
         self.witness = witness
         self.xml = etree.XML(self.witness)
         self.siglum = self.xml.attrib['wit']
-        self.lines = self.xml.findall('.//l')
+        self.lines = [Line(line) for line in self.xml.findall('.//l')]
     def __len__(self):
         return len(self.lines)
     def __getitem__(self,key):
@@ -128,9 +128,14 @@ tree = etree.parse('pizarnik.xml')
 root = tree.getroot()
 versions = root.findall('.//version')
 versionSet = [Witness(etree.tostring(version)) for version in versions]
-lineCount = len(versionSet[0])
-lineSets = [[versionSet[j][i] for i in range(lineCount)] for j in [0,1]]
-print(lineSets)
+lineCount = len(versionSet[0]) # 9 lines
+# print(versionSet[0].lines) # returns Line object
+for lineNo in range(lineCount):
+    print(versionSet[0].lines[lineNo].tokens())
+#  = [{versionSet[i].siglum: versionSet[i].lines} for i in range(len(versionSet))]
+# print(type(versionDicts[0].keys()[0]))
+# print(len(versionSet)) # 2
+# lineSets = [[versionSet[j][i] for i in range(lineCount)] for j in [0,1]]
 # for version in versions:
 #     stuff = Witness(etree.tostring(version))
 #     print(len(stuff))
