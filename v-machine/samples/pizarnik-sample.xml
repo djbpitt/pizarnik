@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Jardín o tiempo</title>
+                <author>Alejandra Pizarnik</author>
+            </titleStmt>
+            <publicationStmt>
+                <p>Work not for publication. Developed by Helena Bermúdez and David Birnbaum to be
+                    used during the conference <emph>Text as Process: Genetic and Textual Criticism
+                        in the Digital Age</emph> (Pittsburgh, April 4-6).</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>The facsimile files were provided by Prof. Daniel E. Balderston for teaching
+                    purposes. Their transcription was made by Helena Bermúdez for the sole purpose
+                    of being used during this workshop.</p>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+            <p>Codification done using the parallel segmentation method. Only the lines were aligned
+                (no tokenization, no encoding of common text).</p>
+        </encodingDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="images/pizarnik-one.jpg" xml:id="piz-one"/>
+        <graphic url="images/pizarnik-two.jpg" xml:id="piz-two"/>
+        <graphic url="images/pizarnik-three.jpg" xml:id="piz-three"/>
+    </facsimile>
+    <text>
+        <front>
+            <div>
+                <listWit>
+                    <witness xml:id="one" facs="#piz-one">La sombra de la imagen</witness>
+                    <witness xml:id="two" facs="#piz-two">Sin título</witness>
+                    <witness xml:id="three" facs="#piz-three">Jardín o tiempo</witness>
+                </listWit>
+            </div>
+        </front>
+        <body>
+            <head>
+                <title><app>
+                        <rdg wit="#one">La sombra de la imagen <del rend="overstrike">Poema para R.
+                        C.</del><lb/> a Renée Cuellar</rdg>
+                        <rdg wit="#two">a renée cuellar</rdg>
+                        <rdg wit="#three"><subst>
+                        <del rend="overstrike">La edad de oro</del>
+                        <add place="above">Jardín o tiempo</add>
+                    </subst><lb/> a Renée Cuellar</rdg>
+                    </app></title></head>
+            <ab>
+                <app>
+                    <rdg wit="#one"><del>
+                    <gap reason="illegible" extent="3"/>
+                </del></rdg>
+                </app></ab>
+            <lg>
+                <l><app>
+                        <rdg wit="#one">es una muerta estación</rdg>
+                        <rdg wit="#two">es una muerta estación <del rend="overwritten">cuand</del></rdg>
+                        <rdg wit="#three">Es una muerta estación</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#one">cuando los lobos viven solo de viento</rdg>
+                        <rdg wit="#two">cuando los lobos viven solo de viento</rdg>
+                        <rdg wit="#three">cuando los lobos viven solo de viento</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#one">y <unclear>un</unclear>a vista de todos los grises</rdg>
+                        <rdg wit="#two">y la vista de todos los grises</rdg>
+                        <rdg wit="#three">y la vista de todos los grises</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#one">es lo único que rompe el silencio</rdg>
+                        <rdg wit="#two">es lo único que rompe el silencio</rdg>
+                        <rdg wit="#three">es lo único que rompe el silencio</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#one">en el que yo vi mi sol oscurecer</rdg>
+                        <rdg wit="#two">en el que yo vi mi sol oscurecerse.</rdg>
+                        <rdg wit="#three">en el que yo vi mi sol oscurecerse.</rdg>
+                    </app></l>
+            </lg>
+            <lg>
+                <l><app>
+                        <rdg wit="#one">no perdonando nada de lo que ocurrió</rdg>
+                        <rdg wit="#two"><del>no perdonando nada de lo que ocurrió</del></rdg>
+                        <rdg wit="#three"><del>no perdonando nada de lo que ocurrió</del></rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#one">no perdonando.</rdg>
+                        <rdg wit="#two"><del>no perdonando nada de lo que no ocurrió.</del></rdg>
+                        <rdg wit="#three"><del>no perdonando nada de lo que no ocurrió.</del></rdg>
+
+                    </app></l>
+            </lg>
+            <l><app>
+                    <rdg wit="#one">(los escombros invaden mis poemas)</rdg>
+                </app></l>
+
+            <l><app>
+                    <rdg wit="#one"><del rend="overstrike">(aparecerá mi jardín hermosamente dibujado en mi
+                poema)</del></rdg>
+                </app></l>
+            <l><app>
+                    <rdg wit="#two"><del rend="multiple-overstrike"><gap reason="illegible" extent="5"/></del></rdg>
+                </app></l>
+            <lg>
+                <l><app>
+                        <rdg wit="#one">voces mías que, unas con silencio y<lb/> otras con colores,</rdg>
+                        <rdg wit="#two">voces mías que, unas con silencio y o tras con <lb/>colores,</rdg>
+                        <rdg wit="#three">Voces mías que, unas con silencios <lb/>y otras con colores<del rend="multiple-overstrike">,</del></rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#one">se atormentan en el jardín</rdg>
+                        <rdg wit="#two"><add place="overwritten">me</add> atormentan en el jardín</rdg>
+                        <rdg wit="#three">me atormentan:</rdg>
+                    </app></l>
+
+                <l><app>
+                        <rdg wit="#three">diremos su nombre y no vendrá;</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#three">de cerca, de lejos, no responderá.</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#one">que existe en mi corazón</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#one">para que por él hare la sombra</rdg>
+                        <rdg wit="#two">para que por él <subst>
+                        <del rend="overstrike">seas</del>
+                        <add place="above"><unclear>haces</unclear></add>
+                    </subst></rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#one">de tu imagen o tu presencia candente</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#one">que me inti<del rend="overstrike">ma</del> , me intimida,</rdg>
+                        <rdg wit="#two">que me intima, me intimida,</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#one">me reduce a no ser más</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#one">que una figura sereta que habla</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#one"><del rend="overstrike"><unclear>que</unclear></del> las palabras del sueño,</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#one">las de la muerte, las del deseo,</rdg>
+                    </app></l>
+            </lg>
+            <lg>
+                <l><app>
+                        <rdg wit="#one">no vendrá cuando digas su nombre,</rdg>
+                        <rdg wit="#two">no vendrá cuando diga su nombre,</rdg>
+                        <rdg wit="#three">no vendrá cuando diga su nombre,</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#one">de cerca, de lejos, no responderá,</rdg>
+                        <rdg wit="#two">de cerca, de lejos, no respondenderá,</rdg>
+                        <rdg wit="#three">de cerca, de lejos, no respondenderá,</rdg>
+                    </app></l>
+            </lg>
+            <lg>
+                <l><app>
+                        <rdg wit="#one">el tiempo está en<del rend="multiple-overstrike">tre</del> mis muertos
+                    queridos,</rdg>
+                        <rdg wit="#two">el tiempo está en mis muertos queridos</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#one">era triste, era verde, el humor de</rdg>
+                        <rdg wit="#two">era triste, era <subst>
+                        <del rend="overstrike">verde,</del>
+                        <add place="above">lluvia,</add>
+                    </subst> el rumor de este jardín,</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#two">alguien no responde cuando <subst>
+                    <del>se le llama,</del>
+                    <add>es llamado,</add>
+                </subst></rdg>
+                    </app></l>
+            </lg>
+            <lg>
+                <l><app>
+                        <rdg wit="#two">toda la noche estudio la noche,</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#two">en vano, solo quería ver el jardín.</rdg>
+                    </app></l>
+            </lg>
+            <lg>
+                <l><app>
+                        <rdg wit="#three"><subst>
+                    <del>Y s</del>
+                    <add>S</add>
+                </subst>erás desolada</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#three"><subst>
+                    <del rend="overwritten">y</del>
+                    <add place="overwritten">Y</add>
+                </subst> tu voz <subst>
+                    <del rend="overstrike">como una</del>
+                    <add>será la</add>
+                </subst> fantasma</rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#three"><subst>
+                    <del rend="overstrike">provendrá de</del>
+                    <add>q se arrastra x</add>
+                </subst> lo oscuro <subst>
+                    <del><gap reason="illegible" extent="1"/></del>
+                    <add>,</add>
+                </subst></rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#three"><subst>
+                    <del rend="overstrike">jardín o tiempo</del>
+                    <add place="inline">jardín o tiempo donde su mirada</add>
+                </subst></rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#three"><subst>
+                    <del rend="overstrike">donde su mirada,</del>
+                    <add place="inline">silencio, silencio.</add>
+                </subst></rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#three"><del rend="multiple-overstrike">silencio, silencio.</del></rdg>
+                    </app></l>
+                <l><app>
+                        <rdg wit="#three">por favor,</rdg>
+                    </app></l>
+            </lg>
+        </body>
+    </text>
+</TEI>
