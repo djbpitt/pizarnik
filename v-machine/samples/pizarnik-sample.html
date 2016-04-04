@@ -1,0 +1,1215 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+   <head>
+      <title>Jardín o tiempo -- The Versioning Machine 5.0</title>
+      <meta charset="utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="../src/vmachine.css"></link><script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script type="text/javascript" src="../src/panzoom/jquery.panzoom.min.js"></script><script type="text/javascript">
+      
+      /*NOTES PANEL: To change the VM so that the notes panel page does not
+      appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
+      INITIAL_DISPLAY_NOTES_PANEL = false;
+      
+      /*BIB PANEL: To change the VM so that the bibliographic information page does not
+      appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
+      INITIAL_DISPLAY_BIB_PANEL = true;
+      
+      /**The number of version/witness panels to be displayed initially */
+      INITIAL_DISPLAY_NUM_VERSIONS = 2;
+      
+      /** CRIT PANEL: Critical information should be encoded as tei:notesStmt/tei:note[@type='critIntro'] in the TEI files --&gt;
+      * To change the VM so that the critical information page does not
+      * appear at the initial load, change the constant INITIAL_DISPLAY_CRIT_PANEL from "true" to "false" */
+      INITIAL_DISPLAY_CRIT_PANEL = false;
+      
+      /** To change the VM so that line numbers are hidden by default, change the constant INITIAL_DISPLAY_LINENUMBERS from
+      * "true" to "false" */
+      INITIAL_DISPLAY_LINENUMBERS = true;
+      
+   var timelinePoints = new Array();var timelineDurations = new Array();</script><script type="text/javascript" src="../src/vmachine.js"></script></head>
+   <body>
+      <div id="mainBanner">
+         <div id="brandingLogo"><a href="../samples.html"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/LogoSilver.png"></img></a></div>
+         <div id="bannerImageContainer"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/HeaderBackground.png"></img><div id="headline">
+               <h1>Jardín o tiempo</h1>
+            </div>
+            <nav id="mainControls">
+               <ul>
+                  <li><button id="selectVersion" class="topMenuButton dropdownButton">3 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt="arrow up"></img><img src="../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="versionList" class="dropdown notVisible">
+                        <li data-panelid="one">
+                           <div class="listText">
+                              <div><a href="#" title="one: La sombra de la imagen">Version one</a></div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="two">
+                           <div class="listText">
+                              <div><a href="#" title="two: Sin título">Version two</a></div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="three">
+                           <div class="listText">
+                              <div><a href="#" title="three: Jardín o tiempo">Version three</a></div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                     </ul>
+                  </li>
+                  <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
+               </ul>
+            </nav>
+         </div>
+      </div>
+      <div id="mssArea">
+         <div id="bibPanel" class="ui-widget-content ui-resizable panel noDisplay">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img>
+               Bibliographic Information
+               
+            </div>
+            <div class="bibContent">
+               <h2>Jardín o tiempo</h2>
+               <h3>
+                  by Alejandra Pizarnik
+               </h3>
+               <h4>Original Source</h4>
+               
+               <p>The facsimile files were provided by Prof. Daniel E. Balderston for teaching
+                  purposes. Their transcription was made by Helena Bermúdez for the sole purpose
+                  of being used during this workshop.
+               </p>
+               
+               <h4>Witness List</h4>
+               <ul>
+                  <li><strong>Witness one:</strong> La sombra de la imagen
+                  </li>
+                  <li><strong>Witness two:</strong> Sin título
+                  </li>
+                  <li><strong>Witness three:</strong> Jardín o tiempo
+                  </li>
+               </ul>
+               <h4>Electronic Edition Information:</h4>
+               <h5>Publication Details:</h5>
+               
+               <p>Work not for publication. Developed by Helena Bermúdez and David Birnbaum to be
+                  used during the conference Text as Process: Genetic and Textual Criticism
+                  in the Digital Age (Pittsburgh, April 4-6).
+               </p>
+               
+               <h4>Encoding Principles</h4>
+               
+               
+               <p>Codification done using the parallel segmentation method. Only the lines were aligned
+                  (no tokenization, no encoding of common text).
+               </p>
+               
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="one">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img><a title="Version one: La sombra de la imagen">Version one: La sombra de la imagen</a></div>
+            <div class="mssContent">
+               <div data-version-id="one" class="facs-images one"></div>
+               
+               <div class="head">
+                  
+                  <div class="title">
+                     <div style="display:inline-block" class="apparatus apparatus_1" data-app-id="apparatus_1">
+                        
+                        <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">La sombra de la imagen </span><del class="del rend-overstrike"><span class="textcontent">Poema para R.
+                                 C.</span></del><div class="linebreak"></div><span class="textcontent"> a Renée Cuellar</span></div>
+                        
+                        <div class="reading two" data-reading-wits="two"><span class="textcontent">a renée cuellar</span></div>
+                        
+                        <div class="reading three" data-reading-wits="three">
+                           <del class="del rend-overstrike"><span class="textcontent">La edad de oro</span></del>
+                           <ins class="addplace-above"><span class="textcontent">Jardín o tiempo</span></ins>
+                           
+                           <div class="linebreak"></div><span class="textcontent"> a Renée Cuellar</span></div>
+                        
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="ab">
+                  
+                  <div style="display:inline-block" class="apparatus apparatus_2" data-app-id="apparatus_2">
+                     
+                     <div style="display:inline-block" class="reading one" data-reading-wits="one"><del>
+                           
+                           </del></div>
+                     
+                  </div>
+               </div>
+               
+               <div class="lg">
+                  
+                  <div class="lineWrapper line_1" data-line-id="line_1">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_3" data-app-id="apparatus_3">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">es una muerta estación</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">es una muerta estación </span><del class="del rend-overwritten"><span class="textcontent">cuand</span></del></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">Es una muerta estación</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_2" data-line-id="line_2">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_4" data-app-id="apparatus_4">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">cuando los lobos viven solo de viento</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">cuando los lobos viven solo de viento</span></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">cuando los lobos viven solo de viento</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_3" data-line-id="line_3">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_5" data-app-id="apparatus_5">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">y </span><span class="unclear"><span class="textcontent">un</span></span><span class="textcontent">a vista de todos los grises</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">y la vista de todos los grises</span></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">y la vista de todos los grises</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_4" data-line-id="line_4">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_6" data-app-id="apparatus_6">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">es lo único que rompe el silencio</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">es lo único que rompe el silencio</span></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">es lo único que rompe el silencio</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_5" data-line-id="line_5">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_7" data-app-id="apparatus_7">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">en el que yo vi mi sol oscurecer</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">en el que yo vi mi sol oscurecerse.</span></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">en el que yo vi mi sol oscurecerse.</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               <div class="lg">
+                  
+                  <div class="lineWrapper line_6" data-line-id="line_6">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_8" data-app-id="apparatus_8">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">no perdonando nada de lo que ocurrió</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><del><span class="textcontent">no perdonando nada de lo que ocurrió</span></del></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><del><span class="textcontent">no perdonando nada de lo que ocurrió</span></del></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_7" data-line-id="line_7">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_9" data-app-id="apparatus_9">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">no perdonando.</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><del><span class="textcontent">no perdonando nada de lo que no ocurrió.</span></del></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><del><span class="textcontent">no perdonando nada de lo que no ocurrió.</span></del></div>
+                           
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               <div class="lineWrapper line_8" data-line-id="line_8">
+                  <div class="line">
+                     <div style="display:inline-block" class="apparatus apparatus_10" data-app-id="apparatus_10">
+                        
+                        <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">(los escombros invaden mis poemas)</span></div>
+                        
+                     </div>
+                  </div>
+               </div>
+               
+               
+               <div class="lineWrapper line_9" data-line-id="line_9">
+                  <div class="line">
+                     <div style="display:inline-block" class="apparatus apparatus_11" data-app-id="apparatus_11">
+                        
+                        <div style="display:inline-block" class="reading one" data-reading-wits="one"><del class="del rend-overstrike"><span class="textcontent">(aparecerá mi jardín hermosamente dibujado en mi
+                                 poema)</span></del></div>
+                        
+                     </div>
+                  </div>
+               </div>
+               
+               
+               <div class="lg">
+                  
+                  <div class="lineWrapper line_11" data-line-id="line_11">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_13" data-app-id="apparatus_13">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">voces mías que, unas con silencio y</span><div class="linebreak"></div><span class="textcontent"> otras con colores,</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">voces mías que, unas con silencio y o tras con </span><div class="linebreak"></div><span class="textcontent">colores,</span></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">Voces mías que, unas con silencios </span><div class="linebreak"></div><span class="textcontent">y otras con colores</span><del class="del rend-multiple-overstrike"><span class="textcontent">,</span></del></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_12" data-line-id="line_12">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_14" data-app-id="apparatus_14">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">se atormentan en el jardín</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><ins class="addplace-overwritten"><span class="textcontent">me</span></ins><span class="textcontent"> atormentan en el jardín</span></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">me atormentan:</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  
+                  
+                  
+                  <div class="lineWrapper line_15" data-line-id="line_15">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_17" data-app-id="apparatus_17">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">que existe en mi corazón</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_16" data-line-id="line_16">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_18" data-app-id="apparatus_18">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">para que por él hare la sombra</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">para que por él </span>
+                              <del class="del rend-overstrike"><span class="textcontent">seas</span></del>
+                              <ins class="addplace-above"><span class="unclear"><span class="textcontent">haces</span></span></ins>
+                              
+                           </div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_17" data-line-id="line_17">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_19" data-app-id="apparatus_19">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">de tu imagen o tu presencia candente</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_18" data-line-id="line_18">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_20" data-app-id="apparatus_20">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">que me inti</span><del class="del rend-overstrike"><span class="textcontent">ma</span></del><span class="textcontent"> , me intimida,</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">que me intima, me intimida,</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_19" data-line-id="line_19">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_21" data-app-id="apparatus_21">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">me reduce a no ser más</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_20" data-line-id="line_20">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_22" data-app-id="apparatus_22">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">que una figura sereta que habla</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_21" data-line-id="line_21">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_23" data-app-id="apparatus_23">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><del class="del rend-overstrike"><span class="unclear"><span class="textcontent">que</span></span></del><span class="textcontent"> las palabras del sueño,</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_22" data-line-id="line_22">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_24" data-app-id="apparatus_24">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">las de la muerte, las del deseo,</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               <div class="lg">
+                  
+                  <div class="lineWrapper line_23" data-line-id="line_23">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_25" data-app-id="apparatus_25">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">no vendrá cuando digas su nombre,</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">no vendrá cuando diga su nombre,</span></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">no vendrá cuando diga su nombre,</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_24" data-line-id="line_24">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_26" data-app-id="apparatus_26">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">de cerca, de lejos, no responderá,</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">de cerca, de lejos, no respondenderá,</span></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">de cerca, de lejos, no respondenderá,</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               <div class="lg">
+                  
+                  <div class="lineWrapper line_25" data-line-id="line_25">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_27" data-app-id="apparatus_27">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">el tiempo está en</span><del class="del rend-multiple-overstrike"><span class="textcontent">tre</span></del><span class="textcontent"> mis muertos
+                                 queridos,</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">el tiempo está en mis muertos queridos</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_26" data-line-id="line_26">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_28" data-app-id="apparatus_28">
+                           
+                           <div style="display:inline-block" class="reading one" data-reading-wits="one"><span class="textcontent">era triste, era verde, el humor de</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">era triste, era </span>
+                              <del class="del rend-overstrike"><span class="textcontent">verde,</span></del>
+                              <ins class="addplace-above"><span class="textcontent">lluvia,</span></ins>
+                              <span class="textcontent"> el rumor de este jardín,</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  
+               </div>
+               
+               <div class="lg">
+                  
+                  
+                  
+               </div>
+               
+               <div class="lg">
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+               </div>
+               
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="two">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img><a title="Version two: Sin título">Version two: Sin título</a></div>
+            <div class="mssContent">
+               <div data-version-id="two" class="facs-images two"></div>
+               
+               <div class="head">
+                  
+                  <div class="title">
+                     <div style="display:inline-block" class="apparatus apparatus_1" data-app-id="apparatus_1">
+                        
+                        <div class="reading one" data-reading-wits="one"><span class="textcontent">La sombra de la imagen </span><del class="del rend-overstrike"><span class="textcontent">Poema para R.
+                                 C.</span></del><div class="linebreak"></div><span class="textcontent"> a Renée Cuellar</span></div>
+                        
+                        <div style="display:inline-block" class="reading two" data-reading-wits="two"><span class="textcontent">a renée cuellar</span></div>
+                        
+                        <div class="reading three" data-reading-wits="three">
+                           <del class="del rend-overstrike"><span class="textcontent">La edad de oro</span></del>
+                           <ins class="addplace-above"><span class="textcontent">Jardín o tiempo</span></ins>
+                           
+                           <div class="linebreak"></div><span class="textcontent"> a Renée Cuellar</span></div>
+                        
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="ab">
+                  
+                  <div class="apparatus apparatus_2" data-app-id="apparatus_2">
+                     
+                     <div class="reading one" data-reading-wits="one"><del>
+                           
+                           </del></div>
+                     
+                  </div>
+               </div>
+               
+               <div class="lg">
+                  
+                  <div class="lineWrapper line_1" data-line-id="line_1">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_3" data-app-id="apparatus_3">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">es una muerta estación</span></div>
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><span class="textcontent">es una muerta estación </span><del class="del rend-overwritten"><span class="textcontent">cuand</span></del></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">Es una muerta estación</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_2" data-line-id="line_2">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_4" data-app-id="apparatus_4">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">cuando los lobos viven solo de viento</span></div>
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><span class="textcontent">cuando los lobos viven solo de viento</span></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">cuando los lobos viven solo de viento</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_3" data-line-id="line_3">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_5" data-app-id="apparatus_5">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">y </span><span class="unclear"><span class="textcontent">un</span></span><span class="textcontent">a vista de todos los grises</span></div>
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><span class="textcontent">y la vista de todos los grises</span></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">y la vista de todos los grises</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_4" data-line-id="line_4">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_6" data-app-id="apparatus_6">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">es lo único que rompe el silencio</span></div>
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><span class="textcontent">es lo único que rompe el silencio</span></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">es lo único que rompe el silencio</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_5" data-line-id="line_5">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_7" data-app-id="apparatus_7">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">en el que yo vi mi sol oscurecer</span></div>
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><span class="textcontent">en el que yo vi mi sol oscurecerse.</span></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">en el que yo vi mi sol oscurecerse.</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               <div class="lg">
+                  
+                  <div class="lineWrapper line_6" data-line-id="line_6">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_8" data-app-id="apparatus_8">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">no perdonando nada de lo que ocurrió</span></div>
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><del><span class="textcontent">no perdonando nada de lo que ocurrió</span></del></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><del><span class="textcontent">no perdonando nada de lo que ocurrió</span></del></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_7" data-line-id="line_7">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_9" data-app-id="apparatus_9">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">no perdonando.</span></div>
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><del><span class="textcontent">no perdonando nada de lo que no ocurrió.</span></del></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><del><span class="textcontent">no perdonando nada de lo que no ocurrió.</span></del></div>
+                           
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="lineWrapper line_10" data-line-id="line_10">
+                  <div class="line">
+                     <div style="display:inline-block" class="apparatus apparatus_12" data-app-id="apparatus_12">
+                        
+                        <div style="display:inline-block" class="reading two" data-reading-wits="two"><del class="del rend-multiple-overstrike"></del></div>
+                        
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="lg">
+                  
+                  <div class="lineWrapper line_11" data-line-id="line_11">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_13" data-app-id="apparatus_13">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">voces mías que, unas con silencio y</span><div class="linebreak"></div><span class="textcontent"> otras con colores,</span></div>
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><span class="textcontent">voces mías que, unas con silencio y o tras con </span><div class="linebreak"></div><span class="textcontent">colores,</span></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">Voces mías que, unas con silencios </span><div class="linebreak"></div><span class="textcontent">y otras con colores</span><del class="del rend-multiple-overstrike"><span class="textcontent">,</span></del></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_12" data-line-id="line_12">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_14" data-app-id="apparatus_14">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">se atormentan en el jardín</span></div>
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><ins class="addplace-overwritten"><span class="textcontent">me</span></ins><span class="textcontent"> atormentan en el jardín</span></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">me atormentan:</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  <div class="lineWrapper line_16" data-line-id="line_16">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_18" data-app-id="apparatus_18">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">para que por él hare la sombra</span></div>
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><span class="textcontent">para que por él </span>
+                              <del class="del rend-overstrike"><span class="textcontent">seas</span></del>
+                              <ins class="addplace-above"><span class="unclear"><span class="textcontent">haces</span></span></ins>
+                              
+                           </div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  
+                  <div class="lineWrapper line_18" data-line-id="line_18">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_20" data-app-id="apparatus_20">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">que me inti</span><del class="del rend-overstrike"><span class="textcontent">ma</span></del><span class="textcontent"> , me intimida,</span></div>
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><span class="textcontent">que me intima, me intimida,</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+               </div>
+               
+               <div class="lg">
+                  
+                  <div class="lineWrapper line_23" data-line-id="line_23">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_25" data-app-id="apparatus_25">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">no vendrá cuando digas su nombre,</span></div>
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><span class="textcontent">no vendrá cuando diga su nombre,</span></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">no vendrá cuando diga su nombre,</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_24" data-line-id="line_24">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_26" data-app-id="apparatus_26">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">de cerca, de lejos, no responderá,</span></div>
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><span class="textcontent">de cerca, de lejos, no respondenderá,</span></div>
+                           
+                           <div class="reading three" data-reading-wits="three"><span class="textcontent">de cerca, de lejos, no respondenderá,</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               <div class="lg">
+                  
+                  <div class="lineWrapper line_25" data-line-id="line_25">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_27" data-app-id="apparatus_27">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">el tiempo está en</span><del class="del rend-multiple-overstrike"><span class="textcontent">tre</span></del><span class="textcontent"> mis muertos
+                                 queridos,</span></div>
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><span class="textcontent">el tiempo está en mis muertos queridos</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_26" data-line-id="line_26">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_28" data-app-id="apparatus_28">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">era triste, era verde, el humor de</span></div>
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><span class="textcontent">era triste, era </span>
+                              <del class="del rend-overstrike"><span class="textcontent">verde,</span></del>
+                              <ins class="addplace-above"><span class="textcontent">lluvia,</span></ins>
+                              <span class="textcontent"> el rumor de este jardín,</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_27" data-line-id="line_27">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_29" data-app-id="apparatus_29">
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><span class="textcontent">alguien no responde cuando </span>
+                              <del><span class="textcontent">se le llama,</span></del>
+                              <ins class="add"><span class="textcontent">es llamado,</span></ins>
+                              
+                           </div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               <div class="lg">
+                  
+                  <div class="lineWrapper line_28" data-line-id="line_28">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_30" data-app-id="apparatus_30">
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><span class="textcontent">toda la noche estudio la noche,</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_29" data-line-id="line_29">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_31" data-app-id="apparatus_31">
+                           
+                           <div style="display:inline-block" class="reading two" data-reading-wits="two"><span class="textcontent">en vano, solo quería ver el jardín.</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               <div class="lg">
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+               </div>
+               
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="three">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img><a title="Version three: Jardín o tiempo">Version three: Jardín o tiempo</a></div>
+            <div class="mssContent">
+               <div data-version-id="three" class="facs-images three"></div>
+               
+               <div class="head">
+                  
+                  <div class="title">
+                     <div style="display:inline-block" class="apparatus apparatus_1" data-app-id="apparatus_1">
+                        
+                        <div class="reading one" data-reading-wits="one"><span class="textcontent">La sombra de la imagen </span><del class="del rend-overstrike"><span class="textcontent">Poema para R.
+                                 C.</span></del><div class="linebreak"></div><span class="textcontent"> a Renée Cuellar</span></div>
+                        
+                        <div class="reading two" data-reading-wits="two"><span class="textcontent">a renée cuellar</span></div>
+                        
+                        <div style="display:inline-block" class="reading three" data-reading-wits="three">
+                           <del class="del rend-overstrike"><span class="textcontent">La edad de oro</span></del>
+                           <ins class="addplace-above"><span class="textcontent">Jardín o tiempo</span></ins>
+                           
+                           <div class="linebreak"></div><span class="textcontent"> a Renée Cuellar</span></div>
+                        
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="ab">
+                  
+                  <div class="apparatus apparatus_2" data-app-id="apparatus_2">
+                     
+                     <div class="reading one" data-reading-wits="one"><del>
+                           
+                           </del></div>
+                     
+                  </div>
+               </div>
+               
+               <div class="lg">
+                  
+                  <div class="lineWrapper line_1" data-line-id="line_1">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_3" data-app-id="apparatus_3">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">es una muerta estación</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">es una muerta estación </span><del class="del rend-overwritten"><span class="textcontent">cuand</span></del></div>
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three"><span class="textcontent">Es una muerta estación</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_2" data-line-id="line_2">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_4" data-app-id="apparatus_4">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">cuando los lobos viven solo de viento</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">cuando los lobos viven solo de viento</span></div>
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three"><span class="textcontent">cuando los lobos viven solo de viento</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_3" data-line-id="line_3">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_5" data-app-id="apparatus_5">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">y </span><span class="unclear"><span class="textcontent">un</span></span><span class="textcontent">a vista de todos los grises</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">y la vista de todos los grises</span></div>
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three"><span class="textcontent">y la vista de todos los grises</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_4" data-line-id="line_4">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_6" data-app-id="apparatus_6">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">es lo único que rompe el silencio</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">es lo único que rompe el silencio</span></div>
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three"><span class="textcontent">es lo único que rompe el silencio</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_5" data-line-id="line_5">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_7" data-app-id="apparatus_7">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">en el que yo vi mi sol oscurecer</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">en el que yo vi mi sol oscurecerse.</span></div>
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three"><span class="textcontent">en el que yo vi mi sol oscurecerse.</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               <div class="lg">
+                  
+                  <div class="lineWrapper line_6" data-line-id="line_6">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_8" data-app-id="apparatus_8">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">no perdonando nada de lo que ocurrió</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><del><span class="textcontent">no perdonando nada de lo que ocurrió</span></del></div>
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three"><del><span class="textcontent">no perdonando nada de lo que ocurrió</span></del></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_7" data-line-id="line_7">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_9" data-app-id="apparatus_9">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">no perdonando.</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><del><span class="textcontent">no perdonando nada de lo que no ocurrió.</span></del></div>
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three"><del><span class="textcontent">no perdonando nada de lo que no ocurrió.</span></del></div>
+                           
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               <div class="lg">
+                  
+                  <div class="lineWrapper line_11" data-line-id="line_11">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_13" data-app-id="apparatus_13">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">voces mías que, unas con silencio y</span><div class="linebreak"></div><span class="textcontent"> otras con colores,</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">voces mías que, unas con silencio y o tras con </span><div class="linebreak"></div><span class="textcontent">colores,</span></div>
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three"><span class="textcontent">Voces mías que, unas con silencios </span><div class="linebreak"></div><span class="textcontent">y otras con colores</span><del class="del rend-multiple-overstrike"><span class="textcontent">,</span></del></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_12" data-line-id="line_12">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_14" data-app-id="apparatus_14">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">se atormentan en el jardín</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><ins class="addplace-overwritten"><span class="textcontent">me</span></ins><span class="textcontent"> atormentan en el jardín</span></div>
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three"><span class="textcontent">me atormentan:</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  
+                  <div class="lineWrapper line_13" data-line-id="line_13">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_15" data-app-id="apparatus_15">
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three"><span class="textcontent">diremos su nombre y no vendrá;</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_14" data-line-id="line_14">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_16" data-app-id="apparatus_16">
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three"><span class="textcontent">de cerca, de lejos, no responderá.</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+               </div>
+               
+               <div class="lg">
+                  
+                  <div class="lineWrapper line_23" data-line-id="line_23">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_25" data-app-id="apparatus_25">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">no vendrá cuando digas su nombre,</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">no vendrá cuando diga su nombre,</span></div>
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three"><span class="textcontent">no vendrá cuando diga su nombre,</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_24" data-line-id="line_24">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_26" data-app-id="apparatus_26">
+                           
+                           <div class="reading one" data-reading-wits="one"><span class="textcontent">de cerca, de lejos, no responderá,</span></div>
+                           
+                           <div class="reading two" data-reading-wits="two"><span class="textcontent">de cerca, de lejos, no respondenderá,</span></div>
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three"><span class="textcontent">de cerca, de lejos, no respondenderá,</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               <div class="lg">
+                  
+                  
+                  
+                  
+               </div>
+               
+               <div class="lg">
+                  
+                  
+                  
+               </div>
+               
+               <div class="lg">
+                  
+                  <div class="lineWrapper line_30" data-line-id="line_30">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_32" data-app-id="apparatus_32">
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three">
+                              <del><span class="textcontent">Y s</span></del>
+                              <ins class="add"><span class="textcontent">S</span></ins>
+                              <span class="textcontent">erás desolada</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_31" data-line-id="line_31">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_33" data-app-id="apparatus_33">
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three">
+                              <del class="del rend-overwritten"><span class="textcontent">y</span></del>
+                              <ins class="addplace-overwritten"><span class="textcontent">Y</span></ins>
+                              <span class="textcontent"> tu voz </span>
+                              <del class="del rend-overstrike"><span class="textcontent">como una</span></del>
+                              <ins class="add"><span class="textcontent">será la</span></ins>
+                              <span class="textcontent"> fantasma</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_32" data-line-id="line_32">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_34" data-app-id="apparatus_34">
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three">
+                              <del class="del rend-overstrike"><span class="textcontent">provendrá de</span></del>
+                              <ins class="add"><span class="textcontent">q se arrastra x</span></ins>
+                              <span class="textcontent"> lo oscuro </span>
+                              <del></del>
+                              <ins class="add"><span class="textcontent">,</span></ins>
+                              
+                           </div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_33" data-line-id="line_33">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_35" data-app-id="apparatus_35">
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three">
+                              <del class="del rend-overstrike"><span class="textcontent">jardín o tiempo</span></del>
+                              <ins class="addplace-inline"><span class="textcontent">jardín o tiempo donde su mirada</span></ins>
+                              
+                           </div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_34" data-line-id="line_34">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_36" data-app-id="apparatus_36">
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three">
+                              <del class="del rend-overstrike"><span class="textcontent">donde su mirada,</span></del>
+                              <ins class="addplace-inline"><span class="textcontent">silencio, silencio.</span></ins>
+                              
+                           </div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_35" data-line-id="line_35">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_37" data-app-id="apparatus_37">
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three"><del class="del rend-multiple-overstrike"><span class="textcontent">silencio, silencio.</span></del></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="lineWrapper line_36" data-line-id="line_36">
+                     <div class="line">
+                        <div style="display:inline-block" class="apparatus apparatus_38" data-app-id="apparatus_38">
+                           
+                           <div style="display:inline-block" class="reading three" data-reading-wits="three"><span class="textcontent">por favor,</span></div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               
+            </div>
+         </div>
+         <div id="notesPanel" class="ui-widget-content ui-resizable panel noDisplay">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img>
+               Textual Notes
+               
+            </div>
+            <div id="noNotesFound" class="noteContent">
+               Sorry, but there are no notes associated with
+               any currently displayed witness.
+               
+            </div>
+         </div>
+         <div class="draggable resizable ui-resizable panel imgPanel noDisplay" id="piz-one">
+            <div title="Click to drag panel." class="viewerHandle handle_imgViewer"><span class="viewerHandleLt title_imgViewer">images/pizarnik-one.jpg</span><img class="viewerHandleRt closePanel" src="../vm-images/closePanel.png" title="Close panel" alt="X (Close panel)"></img></div>
+            <div class="viewerContent" id="content_imgViewer">
+               <div class="panzoom-parent" style="overflow:visible">
+                  <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/pizarnik-one.jpg"></img></div>
+               </div>
+               <div class="buttons"><button class="zoom-out">-</button><input type="range" min="0" max="100" class="zoom-range"></input><button class="zoom-in">+</button></div>
+            </div>
+         </div>
+         <div class="draggable resizable ui-resizable panel imgPanel noDisplay" id="piz-two">
+            <div title="Click to drag panel." class="viewerHandle handle_imgViewer"><span class="viewerHandleLt title_imgViewer">images/pizarnik-two.jpg</span><img class="viewerHandleRt closePanel" src="../vm-images/closePanel.png" title="Close panel" alt="X (Close panel)"></img></div>
+            <div class="viewerContent" id="content_imgViewer">
+               <div class="panzoom-parent" style="overflow:visible">
+                  <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/pizarnik-two.jpg"></img></div>
+               </div>
+               <div class="buttons"><button class="zoom-out">-</button><input type="range" min="0" max="100" class="zoom-range"></input><button class="zoom-in">+</button></div>
+            </div>
+         </div>
+         <div class="draggable resizable ui-resizable panel imgPanel noDisplay" id="piz-three">
+            <div title="Click to drag panel." class="viewerHandle handle_imgViewer"><span class="viewerHandleLt title_imgViewer">images/pizarnik-three.jpg</span><img class="viewerHandleRt closePanel" src="../vm-images/closePanel.png" title="Close panel" alt="X (Close panel)"></img></div>
+            <div class="viewerContent" id="content_imgViewer">
+               <div class="panzoom-parent" style="overflow:visible">
+                  <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/pizarnik-three.jpg"></img></div>
+               </div>
+               <div class="buttons"><button class="zoom-out">-</button><input type="range" min="0" max="100" class="zoom-range"></input><button class="zoom-in">+</button></div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

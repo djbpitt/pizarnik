@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sample>
-    <author>Pizarnik</author>
-    <title>Cuarto solo</title>
+    <metadata>
+        <author>Pizarnik</author>
+        <title>Cuarto solo</title>
+        <publicationStmt>
+            <p>Work not for publication. Developed by Helena Bermúdez and David Birnbaum to be used
+                during the conference <emph>Text as Process: Genetic and Textual Criticism in the
+                    Digital Age</emph> (Pittsburgh, April 4-6).</p>
+        </publicationStmt>
+        <sourceDesc>
+            <p>The facsimile files were provided by Prof. Daniel E. Balderston and John Kennedy for
+                teaching purposes. Their transcription was made by Helena Bermúdez for the sole
+                purpose of being used during this workshop.</p>
+        </sourceDesc>
+    </metadata>
     <version wit="draft">
         <del rend="overstrike">Si alguna vez</del>
         <l><add place="margin">Si</add> te atreves a <del rend="multiple-overstrike"><gap
                     reason="illegible" length="7"/>der</del> sorprender</l>
         <l>el sentido de esta vieja pared;</l>
-        <l>y sus fisura<subst><add place="inline">s,</add><del rend="over-written"
-                >;</del></subst><del rend="overstrike"><gap length="1" reason="illegible"/></del>
+        <l>y sus fisura<subst><del rend="over-written">;</del><add place="inline"
+                >s,</add></subst><del rend="overstrike"><gap length="1" reason="illegible"/></del>
                 desgarraduras<del rend="overstrike"><gap reason="illegible" length="1"/></del>,</l>
         <l>formando rostros, esfinges,</l>
         <l>manos, clepsidras, <del rend="overstrike"><gap reason="illegible" length="3"/></del></l>
