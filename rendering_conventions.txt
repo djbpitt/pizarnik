@@ -1,0 +1,13 @@
+Plain text
+Addition in margin : \\ //
+Addition in line: \ /
+Deletion : parentheses
+Gap : dot for each character of length
+
+HTML
+Addition in margin : <ins>, green and map to \\ //
+	(remove default underlining: text-decoration: none)
+Addition in line : <ins>, green and map to \ /
+	(remove default underlining: text-decoration: none)
+Deletion : <del>, red, defaults to overstrike
+Gap : 

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="692e6bac-c6f1-4c1a-adee-cd87c98b383b" name="Default" comment="" />
+    <list default="true" id="692e6bac-c6f1-4c1a-adee-cd87c98b383b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/collation.html" afterPath="$PROJECT_DIR$/collation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xml-to-html.xsl" afterPath="$PROJECT_DIR$/xml-to-html.xsl" />
+    </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />

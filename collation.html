@@ -1,160 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
-<html xmlns:djb="http://www.obdurodon.org">
-   <head>
-      <title>Pizarnik collation demo</title>
-      <link rel="stylesheet"
-            href="http://www.obdurodon.org/css/style.css"
-            type="text/css"/>
-      <style type="text/css">
+<html xmlns:djb="http://www.obdurodon.org"><head><title>Pizarnik collation demo</title><link rel="stylesheet" href="http://www.obdurodon.org/css/style.css" type="text/css"/><style type="text/css">
+                    table,
+                    tr,
                     th,
                     td{
                         border: none;
                     }
-                    th{
+                    th,
+                    td{
                         text-align: left;
                         border-right: 1px solid gray;
+                        border-left: 1px solid gray;
                     }
                     ins{
                         text-decoration: none;
                         color: green;
                     }
-                    del{
+                    .add{
+                        color: green;
+                    }
+                    .del,
+                    .gap{
                         color: red;
-                    }</style>
-   </head>
-   <body>
-      <h1>Pizarnik collation demo</h1>
-      <h2>Line 1</h2>
-      <table>
-         <tr>
-            <th>Draft</th>
-            <td>
-               <ins/>Si<ins/> te atreves a </td>
-            <td>
-               <del/>
-               <span class="gap"/>
-               <span class="gap"/>der<del/> 
-            </td>
+                        text-decoration: line-through;
+                    }
+                    .label{
+                        font-style: italic;
+                    }</style></head><body><h1>Pizarnik collation demo</h1><p class="label">Line 1</p><table><tr><th>Draft</th>
+            <td><span class="add">\\</span><span class="add">Si</span><span class="add">//</span> te atreves a </td>
+            <td><span class="del">(</span><span class="gap">.......</span><span class="del">der</span><span class="del">)</span> </td>
             <td>sorprender </td>
-        </tr>
-         <tr>
-            <th>Published</th>
+        </tr><tr><th>Published</th>
             <td>Si te atreves a </td>
             <td/>
             <td>sorprender </td>
-        </tr>
-      </table>
-      <h2>Line 2</h2>
-      <table>
-         <tr>
-            <th>Draft</th>
+        </tr></table><p class="label">Line 2</p><table><tr><th>Draft</th>
             <td>el sentido </td>
             <td>de esta vieja pared; </td>
-        </tr>
-         <tr>
-            <th>Published</th>
+        </tr><tr><th>Published</th>
             <td>la verdad </td>
             <td>de esta vieja pared; </td>
-        </tr>
-      </table>
-      <h2>Line 3</h2>
-      <table>
-         <tr>
-            <th>Draft</th>
+        </tr></table><p class="label">Line 3</p><table><tr><th>Draft</th>
             <td>y sus </td>
-            <td>fisura<ins/>s,<ins/>
-               <del/>;<del/>
-               <del/>
-               <span class="gap"/>
-               <span class="gap"/>
-               <del/> 
-            </td>
-            <td>desgarraduras<del/>
-               <span class="gap"/>
-               <span class="gap"/>
-               <del/>, </td>
-        </tr>
-         <tr>
-            <th>Published</th>
+            <td>fisura<span class="add">\</span><span class="add">s,</span><span class="add">/</span><span class="del">(</span><span class="del">;</span><span class="del">)</span><span class="del">(</span><span class="gap">.</span><span class="del">)</span> </td>
+            <td>desgarraduras<span class="del">(</span><span class="gap">.</span><span class="del">)</span>, </td>
+        </tr><tr><th>Published</th>
             <td>y sus </td>
             <td>fisuras, </td>
             <td>desgarraduras, </td>
-        </tr>
-      </table>
-      <h2>Line 4</h2>
-      <table>
-         <tr>
-            <th>Draft</th>
+        </tr></table><p class="label">Line 4</p><table><tr><th>Draft</th>
             <td>formando rostros, esfinges, </td>
-        </tr>
-         <tr>
-            <th>Published</th>
+        </tr><tr><th>Published</th>
             <td>formando rostros, esfinges, </td>
-        </tr>
-      </table>
-      <h2>Line 5</h2>
-      <table>
-         <tr>
-            <th>Draft</th>
+        </tr></table><p class="label">Line 5</p><table><tr><th>Draft</th>
             <td>manos, clepsidras, </td>
             <td>
-                        <del/>
-                        <span class="gap"/>
-                        <span class="gap"/>
-                        <del/>
+                        <span class="del">(</span><span class="del">
+                        </span><span class="gap">...</span><span class="del">
+                        </span><span class="del">
+                        </span><span class="del">)</span>
                      </td>
-        </tr>
-         <tr>
-            <th>Published</th>
+        </tr><tr><th>Published</th>
             <td>manos, clepsidras, </td>
             <td/>
-        </tr>
-      </table>
-      <h2>Line 6</h2>
-      <table>
-         <tr>
-            <th>Draft</th>
+        </tr></table><p class="label">Line 6</p><table><tr><th>Draft</th>
             <td>seguramente vendrá </td>
-        </tr>
-         <tr>
-            <th>Published</th>
+        </tr><tr><th>Published</th>
             <td>seguramente vendrá </td>
-        </tr>
-      </table>
-      <h2>Line 7</h2>
-      <table>
-         <tr>
-            <th>Draft</th>
+        </tr></table><p class="label">Line 7</p><table><tr><th>Draft</th>
             <td>una presencia para tu sed, </td>
-        </tr>
-         <tr>
-            <th>Published</th>
+        </tr><tr><th>Published</th>
             <td>una presencia para tu sed, </td>
-        </tr>
-      </table>
-      <h2>Line 8</h2>
-      <table>
-         <tr>
-            <th>Draft</th>
+        </tr></table><p class="label">Line 8</p><table><tr><th>Draft</th>
             <td>probablemente partirá </td>
-        </tr>
-         <tr>
-            <th>Published</th>
+        </tr><tr><th>Published</th>
             <td>probablemente partirá </td>
-        </tr>
-      </table>
-      <h2>Line 9</h2>
-      <table>
-         <tr>
-            <th>Draft</th>
+        </tr></table><p class="label">Line 9</p><table><tr><th>Draft</th>
             <td>esta ausencia que te bebe. </td>
-        </tr>
-         <tr>
-            <th>Published</th>
+        </tr><tr><th>Published</th>
             <td>esta ausencia que te bebe. </td>
-        </tr>
-      </table>
-   </body>
-</html>
+        </tr></table></body></html>
